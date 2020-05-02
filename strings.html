@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Another String</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        <input type="text" class="input">
+        <input type="submit" value="Submit Email">
+    </form>
+
+    <script>
+        const myForm = document.querySelector("#myForm");
+        const submitForm = e => {
+            e.preventDefault();
+            let inputValue = document.querySelector(".input").value;
+            if (inputValue.indexOf("@") <= -1 && inputValue.indexOf(".") <= -1) {
+                alert("Get the da,n email right nigger");
+            } else {
+                alert("Ypu are on track nigger");
+            }
+        }
+        
+        myForm.addEventListener("submit", submitForm)
+        // myForm.addEventListener("submit", function(e) {
+        //     e.preventDefault();
+        //     let inputValue = document.querySelector(".input").value;
+        //     if(inputValue.indexOf("@") <= -1 && inputValue.indexOf(".") <= -1 ) {
+        //         alert("mothersucker your email is not formatted correctly");
+        //     } else {
+        //         alert("Good boy you are good to go");
+        //     }
+        //     console.log(inputValue);
+        // })
+        
+    </script>
+</body>
+</html>

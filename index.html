@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        .mean {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+    </style>
+    <title>My Contacts</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">My Contacts</h1>
+        <div class="form-group">
+            <input type="text" class="form-control" id="filterInput" placeholder="Search names...">
+        </div>
+        <ul id="names" class="list-group">
+            <li class="mean">
+                <h5>A</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Abe</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Abram</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Ada</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Adam</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Ade</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Alan</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Anna</a>
+            </li>
+
+            <li class="mean">
+                <h5>B</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Bath</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Bassey</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Bovi</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Brad</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Brate</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Brick</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Byan</a>
+            </li>
+
+            <li class="mean">
+                <h5>C</h5>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Catherine</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Callister</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Cape</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Carry</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Collins</a>
+            </li>
+            <li class="list-group-item">
+                <a href="#">Courtney</a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let filterInput = document.getElementById("filterInput");
+
+        let filterNames = () => {
+            //get inputValue
+            let inputValue = document.querySelector("#filterInput").value.toUpperCase();
+
+            //get ul
+            let ul = document.querySelector("#names");
+
+            //get Li
+            let li = ul.querySelectorAll(".list-group-item");
+
+            for(let i = 0; i < li.length; i++) {
+                let a = li[i].querySelectorAll("a")[0];
+
+            
+                if(a.innerText.toUpperCase().indexOf(inputValue) > -1) {
+                        li[i].style.display = "";                
+                } else {
+                    li[i].style.display = "none";     
+                }
+
+            }
+        }
+
+        // event listener
+        filterInput.addEventListener("keyup", filterNames);
+    </script>
+    
+
+</body>
+
+
+</html>
